@@ -1,0 +1,201 @@
+# REST API Server on Local Firebase
+@baseUrl = http://localhost:5001/wejogmobile/us-central1/api
+
+### Getting the list of users
+GET {{baseUrl}}/users
+
+### Getting the list of calorie
+GET {{baseUrl}}/calorie
+
+### Getting the list of bloodPressure
+GET {{baseUrl}}/bloodPressure
+
+### Getting the list of dailyData
+GET {{baseUrl}}/dailyData
+
+### Getting the list of reminders
+GET {{baseUrl}}/reminders
+
+
+###  Getting a user of given id
+GET {{baseUrl}}/users/3uRfpAkDgZEXk4MFPGdd
+
+###  Getting a calorie of given id
+GET {{baseUrl}}/calorie/3uuwdXNKKwVulNQcSmiX
+
+###  Getting a bloodPressure of given id
+GET {{baseUrl}}/bloodPressure/auwXS77eVktmx484izYl
+
+###  Getting a dailyData of given id
+GET {{baseUrl}}/dailyData/OrbeNdi7xhIninO29xQ6
+
+###  Getting a reminders of given id
+GET {{baseUrl}}/reminders/PtJ7OOo0UpKISH4fJuvu
+
+
+
+###  Create a new user
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+    "fullName": "John Doe",
+    "location": "Malaysia",
+    "nationality": "Malaysian",
+    "email": "johnDoe@utm.my",
+    "birthYear": 1997,
+    "height": 170,
+    "weight": 56,
+    "calorieGoal": 600,
+    "distanceGoal": 2000,
+    "stepGoal": 1000
+}
+
+###  Create a new calorie
+POST {{baseUrl}}/calorie
+Content-Type: application/json
+
+{
+    
+    "name": "apple",
+    "number": 2,
+    "calorie": 250,
+    "userId": "yQPwHoBMwggM4qyt5zlQuwZpBla2",
+    "date": "2020-7-22"
+}
+
+###  Create a new blood pressure record
+POST {{baseUrl}}/bloodPressure
+Content-Type: application/json
+
+{
+    
+    "sys": 120,
+    "dia": 72,
+    "pulse": 50,
+    "userId": "yQPwHoBMwggM4qyt5zlQuwZpBla2",
+    "date": "2020-7-22"
+}
+
+###  Create a new daily data record
+POST {{baseUrl}}/dailyData
+Content-Type: application/json
+
+{
+    "calorie": {
+        "calorieCount": 71,
+        "date": "2020-7-22"
+    },
+    "distance": {
+        "distanceCount": 1350,
+        "date": "2020-7-22"
+    },
+    "footstep": {
+        "count": 1776,
+        "date": "2020-7-22"
+    },
+    "date": "2020-7-22",
+    "userId": "yQPwHoBMwggM4qyt5zlQuwZpBla2"
+}
+
+###  Create a new todo record
+POST {{baseUrl}}/reminders
+Content-Type: application/json
+
+{
+    "completed": false,
+    "title": "buy milk",
+    "shortNotes": "note",
+    "userId": "yQPwHoBMwggM4qyt5zlQuwZpBla2"
+}
+
+
+
+###  update a user
+PUT {{baseUrl}}/users/3uRfpAkDgZEXk4MFPGdd
+Content-Type: application/json
+
+{
+    "fullName": "John Doe",
+    "location": "Malaysia",
+    "nationality": "Malaysian",
+    "email": "johnDoe@utm.my",
+    "birthYear": 1997,
+    "height": 170,
+    "weight": 56,
+    "calorieGoal": 600,
+    "distanceGoal": 2000,
+    "stepGoal": 1000
+    
+}
+
+###  update a  calorie
+PUT {{baseUrl}}/calorie/3uuwdXNKKwVulNQcSmiX
+Content-Type: application/json
+
+{
+    
+    "name": "apple",
+    "number": 2,
+    "calorie": 250,
+    "userId": "yQPwHoBMwggM4qyt5zlQuwZpBla2",
+    "date": "2020-7-22"
+}
+
+###  update a  blood pressure record
+PUT {{baseUrl}}/bloodPressure/auwXS77eVktmx484izYl
+Content-Type: application/json
+
+{
+    
+    "sys": 120,
+    "dia": 72,
+    "pulse": 50,
+    "userId": "yQPwHoBMwggM4qyt5zlQuwZpBla2",
+    "date": "2020-7-22"
+}
+
+###  update a  daily data record
+PUT {{baseUrl}}/dailyData/OrbeNdi7xhIninO29xQ6
+Content-Type: application/json
+
+{
+    "calorie": {
+        "calorieCount": 71,
+        "date": "2020-7-22"
+    },
+    "distance": {
+        "distanceCount": 1350,
+        "date": "2020-7-22"
+    },
+    "footstep": {
+        "count": 1776,
+        "date": "2020-7-22"
+    },
+    "date": "2020-7-22"
+}
+
+###  update a  todo record
+PATCH  {{baseUrl}}/reminders/PtJ7OOo0UpKISH4fJuvu
+Content-Type: application/json
+
+{
+    "completed": true,
+    "title": "buy milk",
+    "shortNotes": "note"
+}
+
+###  Getting a user of given id
+DELETE {{baseUrl}}/users/3uRfpAkDgZEXk4MFPGdd
+
+###  Getting a calorie of given id
+DELETE {{baseUrl}}/calorie/3uuwdXNKKwVulNQcSmiX
+
+###  Getting a bloodPressure of given id
+DELETE {{baseUrl}}/bloodPressure/auwXS77eVktmx484izYl
+
+###  Getting a dailyData of given id
+DELETE {{baseUrl}}/dailyData/OrbeNdi7xhIninO29xQ6
+
+###  Getting a reminders of given id
+DELETE {{baseUrl}}/reminders/PtJ7OOo0UpKISH4fJuvu
